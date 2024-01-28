@@ -1,0 +1,15 @@
+
+<div class="modal" data-js-modal='modal1'>
+	<button type="button" class="modal__close" data-js-close-modal-btn></button>
+	<div class="modal__content">
+		<p style='max-width: 88vw; text-align: center;'>В данное модальное окно можно поместить любой контент. Модальное окно с формой можно просмотреть нажав на кнопку в футере. Ширина окна не может быть больше 66vw. Автоматически подстраивается под ширину контента. На мобильных устройствах (max-width: 767px) ширина окна не более чем 88vw, высота не более 88dvh. Подробнее в классе Modal</p>
+	</div>
+</div>
+
+<div class="modal" data-js-modal='modal2'>
+	<button type="button" class="modal__close" data-js-close-modal-btn></button>
+	<div class="modal__content">
+        <%- require("../form/template.ejs")()  %>
+	</div>
+</div>
+

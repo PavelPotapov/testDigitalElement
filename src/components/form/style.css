@@ -1,0 +1,148 @@
+@import url("../../css/custom-media.css");
+
+.form-contact {
+  width: 100%;
+  max-width: 428px;
+
+  @media (--mobile) {
+    max-width: 100%;
+  }
+
+  &__fieldset {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    padding: 0;
+    border: none;
+    outline: none;
+  }
+
+  &__row {
+    width: 100%;
+    margin-bottom: 32px;
+
+    @media (--mobile-h) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__error-validate {
+    & .form-contact {
+      &__label {
+        color: red;
+      }
+
+      &__input {
+        border: 1px solid red;
+
+        &:focus {
+          outline: 1px solid red;
+        }
+
+        &::placeholder {
+          color: red;
+        }
+      }
+
+      &__validate-message {
+        display: block;
+      }
+    }
+  }
+
+  &__good-validate {
+    & .form-contact {
+      &__label {
+        color: var(--color-light-green);
+      }
+
+      &__input {
+        border: 1px solid var(--color-light-green);
+
+        &:focus {
+          outline: 1px solid var(--color-light-green);
+        }
+
+        &::placeholder {
+          color: var(--color-light-green);
+        }
+      }
+
+      &__validate-message {
+        display: none;
+      }
+    }
+  }
+
+  &__validate-message {
+    color: red;
+    display: block;
+  }
+
+  &__legend {
+    margin-bottom: 48px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--color-dark-blue);
+    letter-spacing: 0.8px;
+
+    @media (--mobile-h) {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.875;
+    color: var(--color-dark-blue);
+    letter-spacing: 0.64px;
+  }
+
+  &__input {
+    padding: 21px 36px;
+    width: 100%;
+    max-height: 72px;
+    border-radius: 10px;
+    border: 1px solid var(--color-light-gray2);
+
+    &:focus {
+      outline: 1px solid var(--color-light-blue);
+    }
+
+    &::placeholder {
+      color: var(--placeholder-color);
+    }
+
+    @media (--mobile-h) {
+      padding: 10px 15px;
+    }
+  }
+
+  &__textarea {
+    min-height: 144px;
+    resize: none;
+    appearance: textfield;
+  }
+
+  &__submit-btn {
+    cursor: pointer;
+    background-color: var(--color-light-blue);
+    border: none;
+    width: 100%;
+    color: var(--color-white);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.625;
+    letter-spacing: 0.64px;
+    border-radius: 10px;
+    padding: 23px 5px;
+
+    &:focus {
+      outline: 1px solid var(--color-dark-blue);
+    }
+  }
+}

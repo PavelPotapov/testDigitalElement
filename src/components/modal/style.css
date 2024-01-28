@@ -1,0 +1,84 @@
+@import url("../../css/custom-media.css");
+
+.modal {
+  --modal-padding: 56px;
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  max-height: 66dvh;
+  max-width: 66vw;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  box-shadow: 5px 10px 50px 0 rgb(16 112 177 / 0.2);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  display: none;
+
+  @media (--mobile) {
+    width: 100%;
+    max-width: 88vw;
+    max-height: 88dvh;
+  }
+
+  &__content {
+    padding: var(--modal-padding);
+    position: relative;
+
+    @media (--mobile) {
+      --modal-padding: 35px;
+    }
+  }
+
+  &__close {
+    --close-button-size: 25px;
+    --side-indention: 5px;
+    --top-indention: 6px;
+    --width-border: 3px;
+
+    position: sticky;
+    top: var(--top-indention);
+    right: 5px;
+    z-index: 5;
+    display: block;
+    width: var(--close-button-size);
+    height: var(--close-button-size);
+    margin-left: auto;
+    border: var(--width-border) solid transparent;
+    border-radius: calc(var(--width-border) * 2);
+    background-color: var(--color-light-gray);
+    cursor: pointer;
+    transition: all ease 0.2s;
+
+    &:hover {
+      border: var(--width-border) solid var(--color-light-green);
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: calc(50% - calc(0.5 * var(--width-border)));
+      left: calc(-1 * var(--width-border));
+      display: block;
+      width: var(--close-button-size);
+      height: var(--width-border);
+      background: var(--color-dark-blue);
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &.isActive {
+    display: block;
+  }
+}
